@@ -1,0 +1,27 @@
+double math_random_int(int a,int b) {
+	if (a > b) {
+		int c = a;
+		a = b;
+		b = c;
+	}
+	return (double)random(a,b+1);
+}
+
+void setup()
+{
+  	pinMode(9, OUTPUT);
+	pinMode(10, OUTPUT);
+	pinMode(11, OUTPUT);
+randomSeed(analogRead(0));
+}
+
+
+void loop()
+{
+
+  	analogWrite(9,(math_random_int(1, 255)));
+  	analogWrite(10,(math_random_int(1, 255)));
+  	analogWrite(11,(math_random_int(1, 255)));
+  	delay(2000);
+
+}
