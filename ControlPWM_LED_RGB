@@ -1,0 +1,38 @@
+double intensitat;
+
+void apagar() {
+	analogWrite(9, 0);
+	analogWrite(10, 0);
+	analogWrite(11, 0);
+}
+
+void setup()
+{
+  	pinMode(9, OUTPUT);
+	pinMode(10, OUTPUT);
+	pinMode(11, OUTPUT);
+	apagar();
+
+}
+
+
+void loop()
+{
+
+  	apagar();
+  	for (intensitat = 0; intensitat <= 255; intensitat=intensitat+1) {
+  		analogWrite(9, intensitat);
+  		delay(15);
+  	}
+  	apagar();
+  	for (intensitat = 0; intensitat <= 255; intensitat=intensitat+1) {
+  		analogWrite(10, intensitat);
+  		delay(15);
+  	}
+  	apagar();
+  	for (intensitat = 0; intensitat <= 255; intensitat=intensitat+1) {
+  		analogWrite(11, intensitat);
+  		delay(15);
+  	}
+
+}
